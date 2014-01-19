@@ -27,6 +27,7 @@
 		C73CEAA3188BDF8F000DCAC1 /* NSSet+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA9B188BDF8F000DCAC1 /* NSSet+ExtensionKit.m */; };
 		C73CEAA4188BDF8F000DCAC1 /* NSString+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA9D188BDF8F000DCAC1 /* NSString+ExtensionKit.m */; };
 		C73CEAA5188BDF8F000DCAC1 /* UIImage+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA9F188BDF8F000DCAC1 /* UIImage+ExtensionKit.m */; };
+		C73CEAAB188BE22D000DCAC1 /* NSDictionary+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEAAA188BE22D000DCAC1 /* NSDictionary+ExtensionKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		C73CEA9D188BDF8F000DCAC1 /* NSString+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ExtensionKit.m"; sourceTree = "<group>"; };
 		C73CEA9E188BDF8F000DCAC1 /* UIImage+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ExtensionKit.h"; sourceTree = "<group>"; };
 		C73CEA9F188BDF8F000DCAC1 /* UIImage+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ExtensionKit.m"; sourceTree = "<group>"; };
+		C73CEAA9188BE22D000DCAC1 /* NSDictionary+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ExtensionKit.h"; sourceTree = "<group>"; };
+		C73CEAAA188BE22D000DCAC1 /* NSDictionary+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ExtensionKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 				C73CEA9D188BDF8F000DCAC1 /* NSString+ExtensionKit.m */,
 				C73CEA9E188BDF8F000DCAC1 /* UIImage+ExtensionKit.h */,
 				C73CEA9F188BDF8F000DCAC1 /* UIImage+ExtensionKit.m */,
+				C73CEAA9188BE22D000DCAC1 /* NSDictionary+ExtensionKit.h */,
+				C73CEAAA188BE22D000DCAC1 /* NSDictionary+ExtensionKit.m */,
 			);
 			path = AHExtensionKit;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				C73CEA74188BDEA9000DCAC1 /* EEViewController.m in Sources */,
 				C73CEAA2188BDF8F000DCAC1 /* NSDate+ExtensionKit.m in Sources */,
 				C73CEAA4188BDF8F000DCAC1 /* NSString+ExtensionKit.m in Sources */,
+				C73CEAAB188BE22D000DCAC1 /* NSDictionary+ExtensionKit.m in Sources */,
 				C73CEAA1188BDF8F000DCAC1 /* NSData+ExtensionKit.m in Sources */,
 				C73CEAA0188BDF8F000DCAC1 /* NSArray+ExtensionKit.m in Sources */,
 				C73CEA6E188BDEA9000DCAC1 /* EEAppDelegate.m in Sources */,
@@ -507,6 +513,7 @@
 				C73CEA8E188BDEA9000DCAC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C73CEA8F188BDEA9000DCAC1 /* Build configuration list for PBXNativeTarget "AHExtensionExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				C73CEA91188BDEA9000DCAC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

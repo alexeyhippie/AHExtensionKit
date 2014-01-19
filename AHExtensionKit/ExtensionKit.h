@@ -12,3 +12,4 @@
 #import "NSData+ExtensionKit.h"
 #import "NSSet+ExtensionKit.h"
 #import "UIImage+ExtensionKit.h"
+#import "NSDictionary+ExtensionKit.h"
