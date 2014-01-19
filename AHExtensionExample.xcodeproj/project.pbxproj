@@ -21,6 +21,12 @@
 		C73CEA7F188BDEA9000DCAC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73CEA61188BDEA9000DCAC1 /* UIKit.framework */; };
 		C73CEA87188BDEA9000DCAC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C73CEA85188BDEA9000DCAC1 /* InfoPlist.strings */; };
 		C73CEA89188BDEA9000DCAC1 /* AHExtensionExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA88188BDEA9000DCAC1 /* AHExtensionExampleTests.m */; };
+		C73CEAA0188BDF8F000DCAC1 /* NSArray+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA95188BDF8F000DCAC1 /* NSArray+ExtensionKit.m */; };
+		C73CEAA1188BDF8F000DCAC1 /* NSData+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA97188BDF8F000DCAC1 /* NSData+ExtensionKit.m */; };
+		C73CEAA2188BDF8F000DCAC1 /* NSDate+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA99188BDF8F000DCAC1 /* NSDate+ExtensionKit.m */; };
+		C73CEAA3188BDF8F000DCAC1 /* NSSet+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA9B188BDF8F000DCAC1 /* NSSet+ExtensionKit.m */; };
+		C73CEAA4188BDF8F000DCAC1 /* NSString+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA9D188BDF8F000DCAC1 /* NSString+ExtensionKit.m */; };
+		C73CEAA5188BDF8F000DCAC1 /* UIImage+ExtensionKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C73CEA9F188BDF8F000DCAC1 /* UIImage+ExtensionKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,19 @@
 		C73CEA84188BDEA9000DCAC1 /* AHExtensionExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AHExtensionExampleTests-Info.plist"; sourceTree = "<group>"; };
 		C73CEA86188BDEA9000DCAC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C73CEA88188BDEA9000DCAC1 /* AHExtensionExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AHExtensionExampleTests.m; sourceTree = "<group>"; };
+		C73CEA93188BDF8F000DCAC1 /* ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionKit.h; sourceTree = "<group>"; };
+		C73CEA94188BDF8F000DCAC1 /* NSArray+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ExtensionKit.h"; sourceTree = "<group>"; };
+		C73CEA95188BDF8F000DCAC1 /* NSArray+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ExtensionKit.m"; sourceTree = "<group>"; };
+		C73CEA96188BDF8F000DCAC1 /* NSData+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ExtensionKit.h"; sourceTree = "<group>"; };
+		C73CEA97188BDF8F000DCAC1 /* NSData+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ExtensionKit.m"; sourceTree = "<group>"; };
+		C73CEA98188BDF8F000DCAC1 /* NSDate+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ExtensionKit.h"; sourceTree = "<group>"; };
+		C73CEA99188BDF8F000DCAC1 /* NSDate+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ExtensionKit.m"; sourceTree = "<group>"; };
+		C73CEA9A188BDF8F000DCAC1 /* NSSet+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+ExtensionKit.h"; sourceTree = "<group>"; };
+		C73CEA9B188BDF8F000DCAC1 /* NSSet+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+ExtensionKit.m"; sourceTree = "<group>"; };
+		C73CEA9C188BDF8F000DCAC1 /* NSString+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ExtensionKit.h"; sourceTree = "<group>"; };
+		C73CEA9D188BDF8F000DCAC1 /* NSString+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ExtensionKit.m"; sourceTree = "<group>"; };
+		C73CEA9E188BDF8F000DCAC1 /* UIImage+ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ExtensionKit.h"; sourceTree = "<group>"; };
+		C73CEA9F188BDF8F000DCAC1 /* UIImage+ExtensionKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ExtensionKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +101,7 @@
 		C73CEA51188BDEA9000DCAC1 = {
 			isa = PBXGroup;
 			children = (
+				C73CEA92188BDF8F000DCAC1 /* AHExtensionKit */,
 				C73CEA63188BDEA9000DCAC1 /* AHExtensionExample */,
 				C73CEA82188BDEA9000DCAC1 /* AHExtensionExampleTests */,
 				C73CEA5C188BDEA9000DCAC1 /* Frameworks */,
@@ -150,6 +170,26 @@
 				C73CEA85188BDEA9000DCAC1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C73CEA92188BDF8F000DCAC1 /* AHExtensionKit */ = {
+			isa = PBXGroup;
+			children = (
+				C73CEA93188BDF8F000DCAC1 /* ExtensionKit.h */,
+				C73CEA94188BDF8F000DCAC1 /* NSArray+ExtensionKit.h */,
+				C73CEA95188BDF8F000DCAC1 /* NSArray+ExtensionKit.m */,
+				C73CEA96188BDF8F000DCAC1 /* NSData+ExtensionKit.h */,
+				C73CEA97188BDF8F000DCAC1 /* NSData+ExtensionKit.m */,
+				C73CEA98188BDF8F000DCAC1 /* NSDate+ExtensionKit.h */,
+				C73CEA99188BDF8F000DCAC1 /* NSDate+ExtensionKit.m */,
+				C73CEA9A188BDF8F000DCAC1 /* NSSet+ExtensionKit.h */,
+				C73CEA9B188BDF8F000DCAC1 /* NSSet+ExtensionKit.m */,
+				C73CEA9C188BDF8F000DCAC1 /* NSString+ExtensionKit.h */,
+				C73CEA9D188BDF8F000DCAC1 /* NSString+ExtensionKit.m */,
+				C73CEA9E188BDF8F000DCAC1 /* UIImage+ExtensionKit.h */,
+				C73CEA9F188BDF8F000DCAC1 /* UIImage+ExtensionKit.m */,
+			);
+			path = AHExtensionKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +291,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73CEA74188BDEA9000DCAC1 /* EEViewController.m in Sources */,
+				C73CEAA2188BDF8F000DCAC1 /* NSDate+ExtensionKit.m in Sources */,
+				C73CEAA4188BDF8F000DCAC1 /* NSString+ExtensionKit.m in Sources */,
+				C73CEAA1188BDF8F000DCAC1 /* NSData+ExtensionKit.m in Sources */,
+				C73CEAA0188BDF8F000DCAC1 /* NSArray+ExtensionKit.m in Sources */,
 				C73CEA6E188BDEA9000DCAC1 /* EEAppDelegate.m in Sources */,
+				C73CEAA5188BDF8F000DCAC1 /* UIImage+ExtensionKit.m in Sources */,
 				C73CEA6A188BDEA9000DCAC1 /* main.m in Sources */,
+				C73CEAA3188BDF8F000DCAC1 /* NSSet+ExtensionKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
