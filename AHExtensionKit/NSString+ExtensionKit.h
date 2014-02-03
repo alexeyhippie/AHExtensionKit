@@ -12,13 +12,16 @@
 
 #pragma mark - initializer
 + (NSString *)localizedStringFromBool:(BOOL)b;
++ (NSString *)fromInt:(int)val;
 
 #pragma mark - modifications
 - (NSString *)lowerCaseFirstLetter;
 - (NSString *)upperCaseFirstLetter;
+- (NSDate *)convertToDate;
 
 #pragma mark - checking
 - (BOOL)containsString:(NSString *)substring;
 - (BOOL)notEmpty;
+- (BOOL)isValidEmail;
 
 @end

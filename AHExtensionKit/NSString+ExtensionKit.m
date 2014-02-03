@@ -23,6 +23,10 @@
     return result;
 }
 
++ (NSString *)fromInt:(int)val {
+    return [NSString stringWithFormat:@"%i", (int)val];
+}
+
 #pragma mark - modifications
 
 - (NSString *)lowerCaseFirstLetter {

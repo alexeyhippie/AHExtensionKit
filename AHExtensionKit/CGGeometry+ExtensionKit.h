@@ -7,9 +7,7 @@
 //
 
 
-CG_INLINE CGRect CGRectFromPointAndSize(CGPoint point, CGSize size);
-
-CGRectFromPointAndSize(CGPoint point, CGSize size)
+CG_INLINE CGRect CGRectFromPointAndSize(CGPoint point, CGSize size)
 {
     CGRect rect;
     rect.origin = point;
