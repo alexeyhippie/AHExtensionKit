@@ -24,7 +24,16 @@
 }
 
 + (NSString *)fromInt:(int)val {
-    return [NSString stringWithFormat:@"%i", (int)val];
+    return format(@"%i", (int)val);
+}
+
++ (NSString *)fromObject:(id)object {
+    NSString *result = @"";
+    if (object) {
+        result = format(@"%@", object);
+    }
+    
+    return result;
 }
 
 #pragma mark - modifications
@@ -34,7 +43,7 @@
 	NSString *letter = [[NSString stringWithCharacters:&l length:1] lowercaseString];
 	NSString *rest = [self substringFromIndex:1];
     
-	return [NSString stringWithFormat:@"%@%@", letter, rest];
+	return format(@"%@%@", letter, rest);
 }
 
 - (NSString *)upperCaseFirstLetter {
@@ -42,7 +51,7 @@
 	NSString *letter = [[NSString stringWithCharacters:&l length:1] uppercaseString];
 	NSString *rest = [self substringFromIndex:1];
     
-	return [NSString stringWithFormat:@"%@%@", letter, rest];
+	return format(@"%@%@", letter, rest);
 }
 
 - (NSDate *)convertToDate {
@@ -52,7 +61,7 @@
     NSDateFormatter *frmttr = [[NSDateFormatter alloc] init];
     frmttr.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     for (NSString *separator in validSeparators) {
-        [frmttr setDateFormat:[NSString stringWithFormat:@"d%@M%@yy", separator, separator]];
+        [frmttr setDateFormat:format(@"d%@M%@yy", separator, separator)];
         result = [frmttr dateFromString:self];
         if (result) {
             break;
@@ -117,6 +126,44 @@
     } else {
         result = YES;
     }
+    
+    return result;
+}
+
+- (BOOL)isDoubleValue {
+    BOOL result = NO;
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(?:|0|[1-9]\\d*)(?:\\.\\d*)?$"
+                                                                           options:0
+                                                                             error:nil];
+    
+    NSArray *matches = [regex matchesInString:self options:0 range:NSMakeRange(0, self.length)];
+    
+    if (matches.count > 0) {
+        result = YES;
+    }
+    return result;
+}
+
+- (BOOL)isIntValue {
+    BOOL valid = NO;
+    NSCharacterSet *alphaNums = [NSCharacterSet decimalDigitCharacterSet];
+    NSCharacterSet *inStringSet = [NSCharacterSet characterSetWithCharactersInString:self];
+    valid = [alphaNums isSupersetOfSet:inStringSet];
+    return valid;
+}
+
+- (BOOL)validEmail:(NSString*)emailString {
+    BOOL result = NO;
+    NSString *regExPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$";
+    NSRegularExpression *regEx = [[NSRegularExpression alloc] initWithPattern:regExPattern
+                                                                      options:NSRegularExpressionCaseInsensitive
+                                                                        error:nil];
+    NSUInteger regExMatches = [regEx numberOfMatchesInString:emailString options:0 range:NSMakeRange(0, [emailString length])];
+    if (regExMatches == 0) {
+        result = NO;
+    } else
+        result = YES;
     
     return result;
 }

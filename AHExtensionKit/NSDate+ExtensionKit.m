@@ -121,8 +121,8 @@
     }
     NSDateComponents *comps = [[NSCalendar currentCalendar] components:(NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:self];
     NSInteger mins = comps.minute;
-    CGFloat part = mins / minInterval;
-    CGFloat quater = round(part);
+    CGFloat part = (float)mins / minInterval;
+    CGFloat quater = nearbyint(part);
     NSInteger dif = (int)((quater * minInterval) - mins);
     
     if (zeroSecond) {

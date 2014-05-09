@@ -10,6 +10,10 @@
 
 @interface UIImage (ExtensionKit)
 
+#pragma mark - getters
 - (CGSize)sizeForWidth:(CGFloat)width;
+
+#pragma mark - modifiers
+- (UIImage *)scaledImageToSize:(CGSize)scaledSize;
 
 @end
