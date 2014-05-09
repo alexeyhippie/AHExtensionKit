@@ -10,6 +10,8 @@
 
 @implementation UIImage (ExtensionKit)
 
+#pragma mark - getters
+
 - (CGSize)sizeForWidth:(CGFloat)width {
     CGSize result = CGSizeMake(self.size.width, self.size.height);
     
@@ -21,6 +23,27 @@
     }
     
     return result;
+}
+
+#pragma mark - modifiers
+
+- (UIImage *)scaledImageToSize:(CGSize)scaledSize {
+    CGFloat imageScale = self.size.width / self.size.height;
+    CGFloat newScale = scaledSize.width / scaledSize.height;
+    CGSize newSize;
+    if (imageScale > newScale) {
+        newSize.width = scaledSize.width;
+        newSize.height = scaledSize.width / imageScale;
+    } else {
+        newSize.height = scaledSize.height;
+        newSize.width = imageScale * scaledSize.height;
+    }
+    
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 @end

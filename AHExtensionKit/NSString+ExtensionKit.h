@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#define format(__FORMAT__, ...) ([NSString stringWithFormat:@"%@",[NSString stringWithFormat:__FORMAT__, ##__VA_ARGS__]])
+
 @interface NSString (ExtensionKit)
 
 #pragma mark - initializer
 + (NSString *)localizedStringFromBool:(BOOL)b;
 + (NSString *)fromInt:(int)val;
++ (NSString *)fromObject:(id)object;
 
 #pragma mark - modifications
 - (NSString *)lowerCaseFirstLetter;
@@ -23,5 +26,7 @@
 - (BOOL)containsString:(NSString *)substring;
 - (BOOL)notEmpty;
 - (BOOL)isValidEmail;
+- (BOOL)isDoubleValue;
+- (BOOL)isIntValue;
 
 @end
