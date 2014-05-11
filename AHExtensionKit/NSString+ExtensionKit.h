@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define format(__FORMAT__, ...) ([NSString stringWithFormat:@"%@",[NSString stringWithFormat:__FORMAT__, ##__VA_ARGS__]])
+#define frmtStr(__FORMAT__, ...) ([NSString stringWithFormat:@"%@",[NSString stringWithFormat:__FORMAT__, ##__VA_ARGS__]])
 
 @interface NSString (ExtensionKit)
 

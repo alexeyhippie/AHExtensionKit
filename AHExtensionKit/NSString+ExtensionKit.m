@@ -24,13 +24,13 @@
 }
 
 + (NSString *)fromInt:(int)val {
-    return format(@"%i", (int)val);
+    return frmtStr(@"%i", (int)val);
 }
 
 + (NSString *)fromObject:(id)object {
     NSString *result = @"";
     if (object) {
-        result = format(@"%@", object);
+        result = frmtStr(@"%@", object);
     }
     
     return result;
@@ -43,7 +43,7 @@
 	NSString *letter = [[NSString stringWithCharacters:&l length:1] lowercaseString];
 	NSString *rest = [self substringFromIndex:1];
     
-	return format(@"%@%@", letter, rest);
+	return frmtStr(@"%@%@", letter, rest);
 }
 
 - (NSString *)upperCaseFirstLetter {
@@ -51,7 +51,7 @@
 	NSString *letter = [[NSString stringWithCharacters:&l length:1] uppercaseString];
 	NSString *rest = [self substringFromIndex:1];
     
-	return format(@"%@%@", letter, rest);
+	return frmtStr(@"%@%@", letter, rest);
 }
 
 - (NSDate *)convertToDate {
@@ -61,7 +61,7 @@
     NSDateFormatter *frmttr = [[NSDateFormatter alloc] init];
     frmttr.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     for (NSString *separator in validSeparators) {
-        [frmttr setDateFormat:format(@"d%@M%@yy", separator, separator)];
+        [frmttr setDateFormat:frmtStr(@"d%@M%@yy", separator, separator)];
         result = [frmttr dateFromString:self];
         if (result) {
             break;
