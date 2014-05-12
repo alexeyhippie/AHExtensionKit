@@ -16,6 +16,10 @@
     return [NSDate dateWithTimeIntervalSince1970:0];
 }
 
++ (NSDate *)now {
+    return [NSDate date];
+}
+
 + (NSDate *)dateWithSystemTimezone {
     NSDate *date = [NSDate date];
     NSTimeZone *tz = [NSTimeZone systemTimeZone];

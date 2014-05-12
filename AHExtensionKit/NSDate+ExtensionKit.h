@@ -12,6 +12,13 @@
 
 #pragma mark - Initializers
 + (NSDate *)zeroDate;
+
+/*
+ Returns current system time;
+ Alias for [NSdate date]
+ **/
++ (NSDate *)now;
+
 + (NSDate *)dateWithSystemTimezone;
 + (NSDate *)date:(NSDate *)date withTime:(NSDate *)time;
 
