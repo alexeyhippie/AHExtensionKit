@@ -14,5 +14,6 @@
 #import "UIImage+ExtensionKit.h"
 #import "NSDictionary+ExtensionKit.h"
 #import "NSObject+ExtensionKit.h"
+#import "NSFileManager+ExtensionKit.h"
 
 #import "CGGeometry+ExtensionKit.h"
