@@ -6,11 +6,18 @@
 //  Copyright (c) 2014 Oggetto Web. All rights reserved.
 //
 
-
 CG_INLINE CGRect CGRectFromPointAndSize(CGPoint point, CGSize size)
 {
     CGRect rect;
     rect.origin = point;
     rect.size = size;
     return rect;
+}
+
+CG_INLINE CGRect CGRectMoveRectToPoint(CGRect rect, CGPoint point)
+{
+    CGRect arect;
+    arect.origin = point;
+    arect.size = rect.size;
+    return arect;
 }
