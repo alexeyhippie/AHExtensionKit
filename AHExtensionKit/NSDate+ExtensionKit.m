@@ -47,6 +47,19 @@
     return result;
 }
 
++ (NSDate *)dateWithYear:(int)year month:(int)month day:(int)day hour:(int)hour min:(int)min sec:(int)sec {    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *dc = [[NSDateComponents alloc] init];
+    dc.year = year;
+    dc.month = month;
+    dc.day = day;
+    dc.hour = hour;
+    dc.minute = min;
+    dc.second = sec;
+    
+    return [cal dateFromComponents:dc];
+}
+
 #pragma mark - Comporators
 
 - (BOOL)isSameDaywithDate:(NSDate *)secondDate inDefaultLocal:(BOOL)isLocal {

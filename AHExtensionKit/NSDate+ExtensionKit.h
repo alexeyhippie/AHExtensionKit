@@ -21,6 +21,7 @@
 
 + (NSDate *)dateWithSystemTimezone;
 + (NSDate *)date:(NSDate *)date withTime:(NSDate *)time;
++ (NSDate *)dateWithYear:(int)year month:(int)month day:(int)day hour:(int)hour min:(int)min sec:(int)sec;
 
 #pragma mark - Comporators
 - (BOOL)isSameDaywithDate:(NSDate *)secondDate inDefaultLocal:(BOOL)isLocal;
