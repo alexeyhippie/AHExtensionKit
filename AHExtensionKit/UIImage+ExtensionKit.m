@@ -25,20 +25,29 @@
     return result;
 }
 
+- (CGSize)aspectFitSizeInBounds:(CGSize)boundSize {
+    CGFloat imageScale = self.size.width / self.size.height;
+    CGFloat newScale = boundSize.width / boundSize.height;
+    CGSize newSize = self.size;
+    if (imageScale > newScale) {
+        if (self.size.width > boundSize.width) {
+            newSize.width = boundSize.width;
+            newSize.height = boundSize.width / imageScale;
+        }
+    } else {
+        if (self.size.height > boundSize.height) {
+            newSize.height = boundSize.height;
+            newSize.width = imageScale * boundSize.height;
+        }
+    }
+    
+    return newSize;
+}
+
 #pragma mark - modifiers
 
 - (UIImage *)scaledImageToSize:(CGSize)scaledSize {
-    CGFloat imageScale = self.size.width / self.size.height;
-    CGFloat newScale = scaledSize.width / scaledSize.height;
-    CGSize newSize;
-    if (imageScale > newScale) {
-        newSize.width = scaledSize.width;
-        newSize.height = scaledSize.width / imageScale;
-    } else {
-        newSize.height = scaledSize.height;
-        newSize.width = imageScale * scaledSize.height;
-    }
-    
+    CGSize newSize = [self aspectFitSizeInBounds:scaledSize];
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
     [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();

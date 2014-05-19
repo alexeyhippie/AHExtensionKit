@@ -12,6 +12,7 @@
 
 #pragma mark - getters
 - (CGSize)sizeForWidth:(CGFloat)width;
+- (CGSize)aspectFitSizeInBounds:(CGSize)boundSize;
 
 #pragma mark - modifiers
 - (UIImage *)scaledImageToSize:(CGSize)scaledSize;
