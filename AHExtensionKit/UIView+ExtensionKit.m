@@ -10,8 +10,62 @@
 
 @implementation UIView (ExtensionKit)
 
-- (void)moveViewToPoint:(CGPoint)point {
+#pragma mark - Getters
+
+- (CGSize)size {
+    return self.frame.size;
+}
+
+- (CGPoint)origin {
+    return self.frame.origin;
+}
+
+- (CGFloat)width {
+    return self.frame.size.width;
+}
+
+- (CGFloat)height {
+    return self.frame.size.height;
+}
+
+- (CGFloat)xPosition {
+    return self.frame.origin.x;
+}
+
+- (CGFloat)yPosition {
+    return self.frame.origin.y;
+}
+
+#pragma mark - Frame
+
+- (void)moveToPoint:(CGPoint)point {
     self.frame = CGRectMoveRectToPoint(self.frame, point);
+}
+
+- (void)moveToPoint:(CGPoint)point withDuration:(NSTimeInterval)seconds {
+    [UIView animateWithDuration:seconds animations:^{
+        [self moveToPoint:point];
+    }];
+}
+
+- (void)moveByXFor:(CGFloat)xShift {
+    self.center = CGPointMake(self.center.x + xShift, self.center.y);
+}
+
+- (void)moveByXFor:(CGFloat)xShift withDuration:(NSTimeInterval)seconds {
+    [UIView animateWithDuration:seconds animations:^{
+        [self moveByXFor:xShift];
+    }];
+}
+
+- (void)moveByYFor:(CGFloat)yShift {
+    self.center = CGPointMake(self.center.x, self.center.y + yShift);
+}
+
+- (void)moveByYFor:(CGFloat)yShift withDuration:(NSTimeInterval)seconds {
+    [UIView animateWithDuration:seconds animations:^{
+        [self moveByYFor:yShift];
+    }];
 }
 
 @end
