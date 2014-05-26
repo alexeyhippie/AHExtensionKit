@@ -15,8 +15,16 @@
 - (CGPoint)origin;
 - (CGFloat)width;
 - (CGFloat)height;
-- (CGFloat)xPosition;
-- (CGFloat)yPosition;
+- (CGFloat)x;
+- (CGFloat)y;
+
+#pragma mark - Setters
+- (void)setSize:(CGSize)size;
+- (void)setOrigin:(CGPoint)origin;
+- (void)setWidth:(CGFloat)width;
+- (void)setHeight:(CGFloat)height;
+- (void)setX:(CGFloat)x;
+- (void)setY:(CGFloat)y;
 
 #pragma mark - Frame
 - (void)moveToPoint:(CGPoint)point;
