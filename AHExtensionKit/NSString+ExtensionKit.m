@@ -168,4 +168,15 @@
     return result;
 }
 
+#pragma mark - Utils
+
++ (NSString *)createUUID {
+    CFUUIDRef theUUID = CFUUIDCreate(NULL);
+    CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+    CFRelease(theUUID);
+    NSString *guid = (__bridge NSString *)string;
+    CFRelease(string);
+    return guid.lowercaseString;
+}
+
 @end

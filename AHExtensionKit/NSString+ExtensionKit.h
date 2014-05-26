@@ -29,4 +29,7 @@
 - (BOOL)isDoubleValue;
 - (BOOL)isIntValue;
 
+#pragma mark - Utils 
++ (NSString *)createUUID;
+
 @end
