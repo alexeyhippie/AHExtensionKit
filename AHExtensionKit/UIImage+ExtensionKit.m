@@ -12,6 +12,14 @@
 
 #pragma mark - getters
 
+- (CGFloat)width {
+    return self.size.width;
+}
+
+- (CGFloat)height {
+    return self.size.height;
+}
+
 - (CGSize)sizeForWidth:(CGFloat)width {
     CGSize result = CGSizeMake(self.size.width, self.size.height);
     
@@ -46,12 +54,24 @@
 
 #pragma mark - modifiers
 
-- (UIImage *)scaledImageToSize:(CGSize)scaledSize {
+- (UIImage *)aspectFitScaledImageToSize:(CGSize)scaledSize {
     CGSize newSize = [self aspectFitSizeInBounds:scaledSize];
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
     [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    return newImage;
+}
+
+- (UIImage *)applyAspectFillInRect:(CGRect)bounds {
+    UIGraphicsBeginImageContext(bounds.size);
+    CGRect rect = CGRectAspectFillRect(self.size, bounds);
+    CGRect destRect = CGRectCenteredInRect(rect, bounds);
+    
+    [self drawInRect:destRect];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
     return newImage;
 }
 

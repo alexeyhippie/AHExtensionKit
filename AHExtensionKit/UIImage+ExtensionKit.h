@@ -11,10 +11,13 @@
 @interface UIImage (ExtensionKit)
 
 #pragma mark - getters
+- (CGFloat)width;
+- (CGFloat)height;
 - (CGSize)sizeForWidth:(CGFloat)width;
 - (CGSize)aspectFitSizeInBounds:(CGSize)boundSize;
 
 #pragma mark - modifiers
-- (UIImage *)scaledImageToSize:(CGSize)scaledSize;
+- (UIImage *)aspectFitScaledImageToSize:(CGSize)scaledSize;
+- (UIImage *)applyAspectFillInRect:(CGRect)bounds;
 
 @end
