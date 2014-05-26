@@ -6,6 +6,17 @@
 //  Copyright (c) 2014 Oggetto Web. All rights reserved.
 //
 
+#pragma mark - CGFloat
+
+// Calculate the destination scale for filling
+CG_INLINE CGFloat CGAspectScaleFill(CGSize sourceSize, CGRect destRect)
+{
+    CGSize destSize = destRect.size;
+    CGFloat scaleW = destSize.width / sourceSize.width;
+    CGFloat scaleH = destSize.height / sourceSize.height;
+    return MAX(scaleW, scaleH);
+}
+
 #pragma mark - CGRect
 
 CG_INLINE CGRect CGRectFromPointAndSize(CGPoint point, CGSize size)
@@ -33,6 +44,25 @@ CG_INLINE CGRect CGRectFromSizeAndCenter(CGSize size, CGPoint center)
     return rect;
 }
 
+CG_INLINE CGRect CGRectAspectFillRect(CGSize sourceSize, CGRect destRect)
+{
+    CGSize destSize = destRect.size;
+    CGFloat destScale = CGAspectScaleFill(sourceSize, destRect);
+    CGFloat newWidth = sourceSize.width * destScale;
+    CGFloat newHeight = sourceSize.height * destScale;
+    CGFloat dWidth = ((destSize.width - newWidth) / 2.0f);
+    CGFloat dHeight = ((destSize.height - newHeight) / 2.0f);
+    CGRect rect = CGRectMake (dWidth, dHeight, newWidth, newHeight);
+    return rect;
+}
+
+CG_INLINE CGRect CGRectCenteredInRect(CGRect rect, CGRect mainRect)
+{
+    CGFloat xOffset = CGRectGetMidX(mainRect)-CGRectGetMidX(rect);
+    CGFloat yOffset = CGRectGetMidY(mainRect)-CGRectGetMidY(rect);
+    return CGRectOffset(rect, xOffset, yOffset);
+}
+
 #pragma mark - CGPoint
 
 CG_INLINE CGPoint CGPointFromCenterOfRect(CGRect rect)
@@ -42,4 +72,3 @@ CG_INLINE CGPoint CGPointFromCenterOfRect(CGRect rect)
     point.y = rect.size.height / 2.f + rect.origin.y;
     return point;
 }
-
