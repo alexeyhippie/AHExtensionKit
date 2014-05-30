@@ -56,13 +56,19 @@
     self.frame = frame;
 }
 
+- (void)setAlpha:(CGFloat)alpha animated:(NSTimeInterval)seconds {
+    [UIView animateWithDuration:seconds animations:^{
+        self.alpha = alpha;
+    }];
+}
+
 #pragma mark - Frame
 
 - (void)moveToPoint:(CGPoint)point {
     self.frame = CGRectMoveRectToPoint(self.frame, point);
 }
 
-- (void)moveToPoint:(CGPoint)point withDuration:(NSTimeInterval)seconds {
+- (void)moveToPoint:(CGPoint)point animated:(NSTimeInterval)seconds {
     [UIView animateWithDuration:seconds animations:^{
         [self moveToPoint:point];
     }];
@@ -72,7 +78,7 @@
     self.center = CGPointMake(self.center.x + xShift, self.center.y);
 }
 
-- (void)moveByXFor:(CGFloat)xShift withDuration:(NSTimeInterval)seconds {
+- (void)moveByXFor:(CGFloat)xShift animated:(NSTimeInterval)seconds {
     [UIView animateWithDuration:seconds animations:^{
         [self moveByXFor:xShift];
     }];
@@ -82,7 +88,7 @@
     self.center = CGPointMake(self.center.x, self.center.y + yShift);
 }
 
-- (void)moveByYFor:(CGFloat)yShift withDuration:(NSTimeInterval)seconds {
+- (void)moveByYFor:(CGFloat)yShift animated:(NSTimeInterval)seconds {
     [UIView animateWithDuration:seconds animations:^{
         [self moveByYFor:yShift];
     }];

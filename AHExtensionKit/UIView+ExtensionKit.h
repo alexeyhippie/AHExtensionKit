@@ -26,12 +26,14 @@
 - (void)setX:(CGFloat)x;
 - (void)setY:(CGFloat)y;
 
+- (void)setAlpha:(CGFloat)alpha animated:(NSTimeInterval)seconds;
+
 #pragma mark - Frame
 - (void)moveToPoint:(CGPoint)point;
-- (void)moveToPoint:(CGPoint)point withDuration:(NSTimeInterval)seconds;
+- (void)moveToPoint:(CGPoint)point animated:(NSTimeInterval)seconds;
 - (void)moveByXFor:(CGFloat)xShift;
-- (void)moveByXFor:(CGFloat)xShift withDuration:(NSTimeInterval)seconds;
+- (void)moveByXFor:(CGFloat)xShift animated:(NSTimeInterval)seconds;
 - (void)moveByYFor:(CGFloat)yShift;
-- (void)moveByYFor:(CGFloat)yShift withDuration:(NSTimeInterval)seconds;
+- (void)moveByYFor:(CGFloat)yShift animated:(NSTimeInterval)seconds;
 
 @end
