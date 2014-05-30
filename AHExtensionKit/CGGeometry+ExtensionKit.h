@@ -72,3 +72,39 @@ CG_INLINE CGPoint CGPointFromCenterOfRect(CGRect rect)
     point.y = rect.size.height / 2.f + rect.origin.y;
     return point;
 }
+
+#pragma mark - CGSize 
+
+CG_INLINE CGSize CGSizeAspectSizeOfSizeForWidth(CGSize originSize, CGFloat widthToFit)
+{
+    CGSize size = originSize;
+    
+    if (originSize.width >= widthToFit) {
+        // change content size only if image width more than view size
+        CGFloat k = originSize.height / originSize.width;
+        CGFloat h = k * widthToFit;
+        size = CGSizeMake(widthToFit, h);
+    }
+    
+    return size;
+}
+
+CG_INLINE CGSize CGSizeAspectFitSizeInBoundsSize(CGSize size, CGSize boundSize)
+{
+    CGFloat originScale = size.width / size.height;
+    CGFloat boundScale = boundSize.width / boundSize.height;
+    CGSize newSize = size;
+    if (originScale > boundScale) {
+        if (size.width > boundSize.width) {
+            newSize.width = boundSize.width;
+            newSize.height = boundSize.width / originScale;
+        }
+    } else {
+        if (size.height > boundSize.height) {
+            newSize.height = boundSize.height;
+            newSize.width = originScale * boundSize.height;
+        }
+    }
+    
+    return newSize;
+}

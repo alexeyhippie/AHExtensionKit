@@ -21,35 +21,11 @@
 }
 
 - (CGSize)sizeForWidth:(CGFloat)width {
-    CGSize result = CGSizeMake(self.size.width, self.size.height);
-    
-    if (self.size.width >= width) {
-        // change content size only if image width more than view size
-        CGFloat imageKoeff = self.size.height / self.size.width;
-        CGFloat h = imageKoeff * width;
-        result = CGSizeMake(width, h);
-    }
-    
-    return result;
+    return CGSizeAspectSizeOfSizeForWidth(self.size, width);
 }
 
 - (CGSize)aspectFitSizeInBounds:(CGSize)boundSize {
-    CGFloat imageScale = self.size.width / self.size.height;
-    CGFloat newScale = boundSize.width / boundSize.height;
-    CGSize newSize = self.size;
-    if (imageScale > newScale) {
-        if (self.size.width > boundSize.width) {
-            newSize.width = boundSize.width;
-            newSize.height = boundSize.width / imageScale;
-        }
-    } else {
-        if (self.size.height > boundSize.height) {
-            newSize.height = boundSize.height;
-            newSize.width = imageScale * boundSize.height;
-        }
-    }
-    
-    return newSize;
+    return CGSizeAspectFitSizeInBoundsSize(self.size, boundSize);
 }
 
 #pragma mark - modifiers
