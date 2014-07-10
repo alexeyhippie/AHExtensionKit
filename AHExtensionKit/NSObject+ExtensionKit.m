@@ -23,12 +23,4 @@
     return object ? object : replacer;
 }
 
-+ (NSString *)className {
-    return NSStringFromClass(self);
-}
-
-- (NSString *)className {
-    return NSStringFromClass([self class]);
-}
-
 @end
