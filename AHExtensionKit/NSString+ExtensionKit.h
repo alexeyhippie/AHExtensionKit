@@ -32,4 +32,7 @@
 #pragma mark - Utils 
 + (NSString *)createUUID;
 
+#pragma mark - Size
+- (CGFloat)heightForWidth:(CGFloat)width withFont:(UIFont *)font;
+
 @end

@@ -179,4 +179,20 @@
     return guid.lowercaseString;
 }
 
+#pragma mark - Size
+- (CGFloat)heightForWidth:(CGFloat)width withFont:(UIFont *)font {
+    CGFloat height = 0.f;
+    
+    if (font) {
+        NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:self
+                                                                             attributes:@{NSFontAttributeName: font}];
+        CGRect rect = [attributedText boundingRectWithSize:(CGSize){width, CGFLOAT_MAX}
+                                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                                   context:nil];
+        height = rect.size.height;
+    }
+    
+    return height;
+}
+
 @end
