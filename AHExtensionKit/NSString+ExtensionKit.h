@@ -15,6 +15,8 @@
 #pragma mark - initializer
 + (NSString *)localizedStringFromBool:(BOOL)b;
 + (NSString *)fromInt:(int)val;
++ (NSString *)fromInteger:(NSInteger)val;
++ (NSString *)fromFloat:(CGFloat)val;
 + (NSString *)fromObject:(id)object;
 
 #pragma mark - modifications
@@ -25,6 +27,7 @@
 #pragma mark - checking
 - (BOOL)containsString:(NSString *)substring;
 - (BOOL)notEmpty;
+- (BOOL)isEmpty;
 - (BOOL)isValidEmail;
 - (BOOL)isDoubleValue;
 - (BOOL)isIntValue;

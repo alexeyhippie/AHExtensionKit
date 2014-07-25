@@ -27,6 +27,14 @@
     return frmtStr(@"%i", (int)val);
 }
 
++ (NSString *)fromInteger:(NSInteger)val {
+    return frmtStr(@"%li", (long)val);
+}
+
++ (NSString *)fromFloat:(CGFloat)val {
+    return frmtStr(@"%g", val);
+}
+
 + (NSString *)fromObject:(id)object {
     NSString *result = @"";
     if (object) {
@@ -107,8 +115,17 @@
 
 - (BOOL)notEmpty {
     BOOL result = NO;
-    if (self && ![self isEqualToString:@""] && self.length > 0) {
+    if (![self isEqualToString:@""] && self.length > 0) {
         result = YES;
+    }
+    
+    return result;
+}
+
+- (BOOL)isEmpty {
+    BOOL result = YES;
+    if (self.notEmpty) {
+        result = NO;
     }
     
     return result;
