@@ -33,4 +33,10 @@
  **/
 + (id)notNil:(id)object replacer:(id)replacer;
 
+/* 
+ return class name as a NSString
+ **/
++ (NSString *)className;
+- (NSString *)className;
+
 @end
