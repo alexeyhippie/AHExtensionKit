@@ -25,6 +25,7 @@
 #pragma mark - checking
 - (BOOL)containsString:(NSString *)substring;
 - (BOOL)notEmpty;
+- (BOOL)isEmpty;
 - (BOOL)isValidEmail;
 - (BOOL)isDoubleValue;
 - (BOOL)isIntValue;

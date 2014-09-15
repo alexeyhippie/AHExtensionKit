@@ -17,4 +17,8 @@
     return self.allKeys.notEmpty;
 }
 
+- (BOOL)isEmpty {
+    return self.allKeys.isEmpty;
+}
+
 @end

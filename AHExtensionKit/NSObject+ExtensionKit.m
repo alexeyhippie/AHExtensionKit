@@ -23,6 +23,19 @@
     return object ? object : replacer;
 }
 
++ (BOOL)isEmpty:(id)object {
+    BOOL result = YES;
+    if (object) {
+        result = NO;
+        if ([object respondsToSelector:@selector(isEmpty)]) {
+            // For Extionsion of NSString, NSArray, NSDictionary
+            result = [object isEmpty];
+        }
+    }
+    
+    return result;
+}
+
 + (NSString *)className {
     return NSStringFromClass(self);
 }

@@ -114,6 +114,15 @@
     return result;
 }
 
+- (BOOL)isEmpty {
+    BOOL result = NO;
+    if ([self isEqualToString:@""] || self.length == 0) {
+        result = YES;
+    }
+    
+    return result;
+}
+
 - (BOOL)isValidEmail {
     BOOL result = NO;
     NSString *regExPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$";

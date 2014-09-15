@@ -13,5 +13,6 @@
 #pragma mark - Checking
 
 - (BOOL)notEmpty;
+- (BOOL)isEmpty;
 
 @end
