@@ -13,7 +13,8 @@
 #pragma mark - Initializers
 
 + (NSDate *)zeroDate {
-    return [NSDate dateWithTimeIntervalSince1970:0];
+    return [self dateWithYear:1 month:1 day:1
+                         hour:0 min:0 sec:0];
 }
 
 + (NSDate *)now {

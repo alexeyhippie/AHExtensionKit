@@ -27,6 +27,14 @@
     return frmtStr(@"%i", (int)val);
 }
 
++ (NSString *)fromInteger:(NSInteger)val {
+    return frmtStr(@"%li", (long)val);
+}
+
++ (NSString *)fromFloat:(CGFloat)val {
+    return frmtStr(@"%g", val);
+}
+
 + (NSString *)fromObject:(id)object {
     NSString *result = @"";
     if (object) {
@@ -107,7 +115,7 @@
 
 - (BOOL)notEmpty {
     BOOL result = NO;
-    if (self && ![self isEqualToString:@""] && self.length > 0) {
+    if (![self isEqualToString:@""] && self.length > 0) {
         result = YES;
     }
     
@@ -186,6 +194,22 @@
     NSString *guid = (__bridge NSString *)string;
     CFRelease(string);
     return guid.lowercaseString;
+}
+
+#pragma mark - Size
+- (CGFloat)heightForWidth:(CGFloat)width withFont:(UIFont *)font {
+    CGFloat height = 0.f;
+    
+    if (font) {
+        NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:self
+                                                                             attributes:@{NSFontAttributeName: font}];
+        CGRect rect = [attributedText boundingRectWithSize:(CGSize){width, CGFLOAT_MAX}
+                                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                                   context:nil];
+        height = rect.size.height;
+    }
+    
+    return height;
 }
 
 @end

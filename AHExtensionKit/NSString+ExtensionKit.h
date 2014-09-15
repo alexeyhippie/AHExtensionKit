@@ -15,6 +15,8 @@
 #pragma mark - initializer
 + (NSString *)localizedStringFromBool:(BOOL)b;
 + (NSString *)fromInt:(int)val;
++ (NSString *)fromInteger:(NSInteger)val;
++ (NSString *)fromFloat:(CGFloat)val;
 + (NSString *)fromObject:(id)object;
 
 #pragma mark - modifications
@@ -32,5 +34,8 @@
 
 #pragma mark - Utils 
 + (NSString *)createUUID;
+
+#pragma mark - Size
+- (CGFloat)heightForWidth:(CGFloat)width withFont:(UIFont *)font;
 
 @end
