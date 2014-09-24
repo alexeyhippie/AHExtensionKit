@@ -16,5 +16,6 @@
 #import "NSObject+ExtensionKit.h"
 #import "NSFileManager+ExtensionKit.h"
 #import "UIView+ExtensionKit.h"
+#import "UILabel+ExtensionKit.h"
 
 #import "CGGeometry+ExtensionKit.h"

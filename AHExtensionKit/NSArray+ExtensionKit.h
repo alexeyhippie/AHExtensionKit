@@ -13,5 +13,6 @@
 - (NSArray *)arrayOfFieldValuesWithFieldName:(NSString *)fieldName distinct:(BOOL)distinct;
 
 - (BOOL)notEmpty;
+- (BOOL)isEmpty;
 
 @end

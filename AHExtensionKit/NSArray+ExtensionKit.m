@@ -15,11 +15,15 @@
     return (self.count > 0);
 }
 
+- (BOOL)isEmpty {
+    return (self.count == 0);
+}
+
 - (NSArray *)arrayOfFieldValuesWithFieldName:(NSString *)fieldName distinct:(BOOL)distinct {
-    // make array of some entity fields
-    // if some entity have no this field NSNull abject will added to result array
+    // make array of some object fields
+    // if some entity have no this field NSNull will added to result array
     NSArray *result = @[];
-    if (([self count] > 0) && fieldName) {
+    if (([self count] > 0) && fieldName.notEmpty) {
         NSMutableArray *resultArray = [NSMutableArray array];
         for (id obj in self) {
             

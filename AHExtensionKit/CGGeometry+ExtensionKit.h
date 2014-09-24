@@ -63,6 +63,13 @@ CG_INLINE CGRect CGRectCenteredInRect(CGRect rect, CGRect mainRect)
     return CGRectOffset(rect, xOffset, yOffset);
 }
 
+CG_INLINE CGRect CGRectCenteredSizeInRect(CGSize size, CGRect mainRect)
+{
+    CGFloat xOffset = CGRectGetMidX(mainRect) - (size.width / 2.f);
+    CGFloat yOffset = CGRectGetMidY(mainRect) - (size.height / 2.f);
+    return CGRectFromPointAndSize(CGPointMake(xOffset, yOffset), size);
+}
+
 #pragma mark - CGPoint
 
 CG_INLINE CGPoint CGPointFromCenterOfRect(CGRect rect)

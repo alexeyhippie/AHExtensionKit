@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define isEmpty(obj) [NSObject isEmpty:(obj)]
 #define notNilWithReplacer(obj, areplacer) [NSObject notNil:(obj) replacer:(areplacer)]
 #define notNil(obj) [NSObject notNil:(obj) replacer:nil]
 
@@ -32,6 +33,16 @@
  NSDictionary *bar = @{@"foo": notNil(someObj)};
  **/
 + (id)notNil:(id)object replacer:(id)replacer;
+
+/*
+ Checks if object not nil and trying to send isEmpty message if yes. 
+ Used for ExtensionKit NSString, NSArray and NSDictionary;
+ If object is nil - NO returned;
+ If object exist but not respond to isEmpty message - YES returned
+ If object exist and responds to isEmpty selector - result of isEmpty returned
+ Macros: isEmpty(obj);
+ **/
++ (BOOL)isEmpty:(id)object;
 
 /* 
  return class name as a NSString
