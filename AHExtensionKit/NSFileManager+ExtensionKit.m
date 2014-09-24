@@ -8,6 +8,12 @@
 
 #import "NSFileManager+ExtensionKit.h"
 
+// Swift macros implement
+
+NSFileManager* defaultFileManagerA() {
+    return fileManager;
+}
+
 @implementation NSFileManager (ExtensionKit)
 
 #pragma mark - Standart directories

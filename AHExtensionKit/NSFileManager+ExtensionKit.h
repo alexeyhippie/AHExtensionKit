@@ -10,6 +10,9 @@
 
 #define fileManager [NSFileManager defaultManager]
 
+// Swift macros functions
+extern NSFileManager* defaultFileManagerA();
+
 @interface NSFileManager (ExtensionKit)
 
 #pragma mark - Standart directories
@@ -29,9 +32,3 @@
 - (BOOL)excludeFileFromICloudByURL:(NSURL *)url;
 
 @end
-
-// Swift macros functions
-
-NSFileManager* defaultFileManager() {
-    return fileManager;
-}
