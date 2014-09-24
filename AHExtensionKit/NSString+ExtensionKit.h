@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Alexey Hippie. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define frmtStr(__FORMAT__, ...) ([NSString stringWithFormat:@"%@",[NSString stringWithFormat:__FORMAT__, ##__VA_ARGS__]])
 

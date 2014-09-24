@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Alexey Hippie. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 #import "NSArray+ExtensionKit.h"
 #import "NSString+ExtensionKit.h"
 #import "NSDate+ExtensionKit.h"

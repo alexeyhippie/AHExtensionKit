@@ -8,6 +8,8 @@
 
 #import "NSDate+ExtensionKit.h"
 
+#import <UIKit/UIKit.h>
+
 @implementation NSDate (ExtensionKit)
 
 #pragma mark - Initializers

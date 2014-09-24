@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+ExtensionKit.h"
+#import <UIKit/UIKit.h>
 
 @implementation NSObject (ExtensionKit)
 

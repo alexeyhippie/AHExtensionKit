@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+ExtensionKit.h"
+#import "CGGeometry+ExtensionKit.h"
 
 @implementation UIImage (ExtensionKit)
 

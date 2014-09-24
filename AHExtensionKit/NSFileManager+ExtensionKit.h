@@ -29,3 +29,9 @@
 - (BOOL)excludeFileFromICloudByURL:(NSURL *)url;
 
 @end
+
+// Swift macros functions
+
+NSFileManager* defaultFileManager() {
+    return fileManager;
+}

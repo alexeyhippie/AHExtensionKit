@@ -7,6 +7,7 @@
 //
 
 #import "UIView+ExtensionKit.h"
+#import "CGGeometry+ExtensionKit.h"
 
 @implementation UIView (ExtensionKit)
 
@@ -71,6 +72,16 @@
 - (void)moveToPoint:(CGPoint)point animated:(NSTimeInterval)seconds {
     [UIView animateWithDuration:seconds animations:^{
         [self moveToPoint:point];
+    }];
+}
+
+- (void)moveToCenter:(CGPoint)center {
+    self.center = center;
+}
+
+- (void)moveToCenter:(CGPoint)center animated:(NSTimeInterval)seconds {
+    [UIView animateWithDuration:seconds animations:^{
+        [self moveToCenter:center];
     }];
 }
 

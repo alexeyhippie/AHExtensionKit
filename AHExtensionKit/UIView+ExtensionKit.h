@@ -31,6 +31,8 @@
 #pragma mark - Frame
 - (void)moveToPoint:(CGPoint)point;
 - (void)moveToPoint:(CGPoint)point animated:(NSTimeInterval)seconds;
+- (void)moveToCenter:(CGPoint)center;
+- (void)moveToCenter:(CGPoint)center animated:(NSTimeInterval)seconds;
 - (void)moveByXFor:(CGFloat)xShift;
 - (void)moveByXFor:(CGFloat)xShift animated:(NSTimeInterval)seconds;
 - (void)moveByYFor:(CGFloat)yShift;
