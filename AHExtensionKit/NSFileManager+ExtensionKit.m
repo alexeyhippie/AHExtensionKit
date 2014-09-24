@@ -10,7 +10,7 @@
 
 // Swift macros implement
 
-NSFileManager* defaultFileManagerA() {
+NSFileManager* defaultFileManager() {
     return fileManager;
 }
 

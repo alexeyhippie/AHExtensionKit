@@ -11,7 +11,7 @@
 #define fileManager [NSFileManager defaultManager]
 
 // Swift macros functions
-extern NSFileManager* defaultFileManagerA();
+extern NSFileManager* defaultFileManager();
 
 @interface NSFileManager (ExtensionKit)
 
